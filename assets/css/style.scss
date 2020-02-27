@@ -1,0 +1,699 @@
+$color-black: #1f2122;
+$color-grey: #575c63;
+$color-white: #f0f1f3;
+
+$color-black-transparent: rgba(31,33,34,0.6);
+$color-white-transparent: rgba(240,241,243,0.95);
+$color-transparent: rgba(0,0,0,0);
+
+@font-face {
+	src: url("../fonts/Roboto-Regular.ttf");
+	font-family: "Roboto";
+}
+
+@font-face {
+	src: url("../fonts/IndieFlower-Regular.ttf");
+	font-family: "IndieFlower";
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Roboto";
+    color: $color-black;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px;
+}
+
+body {
+    background-color: $color-white;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ===== UNIVERSAL CLASSES ===== */
+
+.display-block {
+    display: block;
+}
+
+.display-none {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.text-align-c {
+    text-align: center;
+}
+
+.align-items-c{
+    align-items: center;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.standard-transition {
+    transition: .2s ease-out;
+}
+
+.bg-color-white-transparent {
+    background-color: $color-white-transparent;
+}
+
+.bg-color-black {
+    background-color: $color-black;
+}
+
+.color-white {
+    color: $color-white;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+/* ===== HEADER ===== */
+
+.wrapper {
+    width: 70%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+#header {
+    height: 70px;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    .wrapper {
+        height: inherit;
+    }
+}
+
+#logo {
+    a {
+        &:hover {
+            h1 {
+                color: $color-grey;
+            }
+        }
+        h1 {
+            padding: 0px 5px;
+            font-size: 40px;
+            font-family: "IndieFlower";
+        }
+    }
+}
+
+#navSocWrapper {
+    .soc {
+        margin-left: 10px;
+        padding-left: 20px;
+        border-left: 1px solid $color-grey;
+    }
+}
+
+#navMenu {
+    ul {
+        li {
+            display: inline-block;
+            a {
+                padding: 15px;
+                font-size: 17px;
+                &:hover {
+                    color: $color-grey;
+                }
+            }
+        }
+    }
+}
+
+.soc {
+    ul {
+        li {
+            display: inline-block;
+            a {
+                padding: 2px;
+                &:hover {
+                    i {
+                        color: $color-grey !important;
+                    }
+                    
+                }
+                i {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+#hamburgerMenu {
+    height: inherit;
+    &:hover {
+        i {
+            color: $color-grey;
+        }
+    }
+    label {
+        width: inherit;
+        height: inherit;
+        padding: 0px 10px;
+        cursor: pointer;
+        i {
+            font-size: 32px;
+        }
+    }
+}
+
+/* DROPDOWN MENU */
+
+#dropdownMenu {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    ul {
+        li {
+            a {
+                padding: 10px;
+                transition: .2s ease-out;
+                &:hover {
+                    color: $color-white;
+                    background-color: $color-grey;
+                }
+            }
+        }
+    }
+}
+
+#chbDropdown {
+    &:checked {
+        ~ #dropdownMenu {
+            display: block;
+        }
+        ~ label i {
+            color: $color-grey;
+        }
+    }
+}
+/* /DROPDOWN MENU */
+
+/* ===== SLIDER ===== */
+
+.cover { /* UNIVERSAL */
+    height: 100%;
+    background-color: $color-black-transparent;
+}
+
+#slider {
+    background-image: url("../img/slider.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 1px 15px $color-black;
+    .cover {
+        .wrapper {
+            padding-top: 280px;
+            padding-bottom: 230px;
+        }
+    }
+}
+
+#sliderText {
+    margin-bottom: 40px;
+    h2 {
+        font-size: 38px;
+        
+    }
+    p {
+        font-size: 18px;
+    }
+}
+
+#readMore {
+    padding: 9px 18px;
+    background-color: $color-transparent;
+    border: 2px solid $color-white;
+    &:hover {
+        color: $color-black;
+        background-color: $color-white;
+    }
+}
+
+/* ===== ABOUT ME ===== */
+
+.section-padding { /* UNIVERSAL */
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.heading { /* UNIVERSAL */
+    margin-bottom: 50px;
+    font-size: 24px;
+    h3 {
+        font-weight: 500;
+    }
+    .separator {
+        width: 50px;
+    }
+}
+
+#aboutMe {
+    .wrapper {
+        justify-content: space-around;
+    }
+}
+
+#photo {
+    width: 310px;
+    img {
+        border-radius: 50%;
+    }
+}
+
+#name {
+    font-size: 24px;
+}
+
+#description {
+    width: 50%;
+    p {
+        font-size: 18px;
+    }
+}
+
+.separator { /* UNIVERSAL */
+    width: 20px;
+    margin: 10px auto;
+    border-bottom: 2px solid $color-black;
+}
+
+/* ===== SKILLS ===== */
+
+.skillsItem {
+    width: 29%;
+    margin-bottom: 20px;
+    header {
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+}
+
+.skillsWrapper {
+    flex-direction: column;
+    p {
+        font-size: 15px;
+    }
+}
+
+.appLogo {
+    width: 100px;
+    img {
+        width: inherit;
+    }
+}
+
+/* ===== PROJECTS ===== */
+
+.projectItem {
+    width: 26%;
+    margin-bottom: 30px;
+    &:hover {
+        transform: scale(1.03);
+        a {
+            span {
+                color: $color-grey;
+            }
+        }
+    }
+}
+
+.projectImage {
+    img {
+        width: inherit;
+    }
+}
+
+/* ===== CONTACT ===== */
+
+.border-color-white { /* UNIVERSAL */
+    border-color: $color-white;
+}
+
+.ver-separator {
+    height: 100px;
+    border-right: 1px solid $color-grey;
+    margin-top: 120px;
+}
+
+.column {
+    width: 45%;
+    p {
+        font-size: 19px;
+        margin-bottom: 20px;
+    }
+    span {
+        font-size: 14px;
+    }
+}
+
+#contact {
+    .wrapper {
+        justify-content: space-evenly;
+        .separator {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+#contactForm {
+    width: 65%;
+    margin: 0 auto;
+    table {
+        tbody {
+            font-size: 17px;
+            tr {
+                td {
+                    input, textarea {
+                        outline: none;
+                        padding: 5px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#tbMessage {
+    height: 150px;
+    resize: none;
+}
+
+#tbName, #tbEmail, #btnSend {
+    height: 30px;
+}
+
+#tbName, #tbEmail, #tbMessage {
+    border: none;
+    border-left: 2px solid $color-white;
+    &:focus {
+        background-color: $color-white;
+        color: $color-black;
+    }
+}
+
+#btnSend {
+    border: none;
+    background-color: $color-white;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-grey;
+        color: $color-white;
+    }
+}
+
+textarea::-webkit-scrollbar {
+    width: 12px;
+    background-color: $color-black;
+}
+  
+textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $color-grey;
+}
+
+/* ===== FOOTER ===== */
+
+#footer {
+    padding: 15px;
+    .soc {
+        margin-bottom: 10px;
+        display: none;
+    }
+}
+
+#copyright {
+    font-size: 12px;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+@media screen and (max-width: 1100px) {
+    /* ===== HEADER ===== */
+
+    #navSocWrapper {
+        .soc {
+            display: none;
+        }
+    }
+
+    /* ===== ABOUT ME ===== */
+
+    #photo {
+        width: 45%;
+    }
+
+    /* ===== SKILLS ===== */
+
+    .skillsItem {
+        width: 40%;
+    }
+
+    .appLogo {
+        width: 80px;
+    }
+
+    /* ===== PROJECTS ===== */
+
+    .projectItem {
+        width: 40%;
+    }
+
+    /* ===== CONTACT ===== */
+
+    #contact {
+        .wrapper {
+            flex-direction: column;
+            .ver-separator {
+                display: none;
+            }
+            .separator {
+                display: block;
+            }
+        }
+    }
+
+    .column {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #contactForm {
+        width: 80%;
+    }
+
+    /* ===== FOOTER ===== */
+
+    #footer {
+        .soc, .separator {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 95%;
+    }
+
+    /* ===== SLIDER ===== */
+
+    #sliderText {
+        h2 {
+            font-size: 35px;
+        }
+    }
+
+    /* ===== ABOUT ME ===== */
+
+    #aboutMe {
+        .wrapper {
+            flex-direction: column;
+            align-items: center;
+            .separator {
+                display: block;
+            }
+        }
+    }
+
+    #photo {
+        width: 40%;
+    }
+
+    #description {
+        width: 75%;
+        text-align: center;
+        p {
+            font-size: 17px;
+        }
+    }
+
+    /* ===== SKILLS ===== */
+
+    .skillsItem {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        header {
+            font-size: 20px;
+        }
+    }
+
+    /* ===== PROJECTS ===== */
+
+    .projectItem {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        scroll-padding-top: 50px;
+    }
+
+    .heading {
+        font-size: 22px;
+    }
+
+    /* ===== HEADER ===== */
+
+    #header {
+        height: 60px;
+    }
+
+    #logo {
+        a {
+            h1 {
+                font-size: 35px;
+            }
+        }
+    }
+
+    #hamburgerMenu {
+        display: block;
+    }
+
+    #navMenu {
+        display: none;
+    }
+
+    /* ===== SLIDER ===== */
+
+    #readMore {
+        font-size: 14px;
+    }
+
+    /* ===== ABOUT ME ===== */
+
+    #photo {
+        width: 55%;
+    }
+
+    /* ===== SKILLS ===== */
+
+    .skillsItem {
+        width: 100%;
+    }
+
+    .skillsWrapper {
+        flex-direction: column;
+        p {
+            font-size: 14px;
+        }
+    }
+
+    /* ===== PROJECTS ===== */
+
+    .projectItem {
+        width: 75%;
+    }
+
+    /* ===== CONTACT ===== */
+
+    #contactForm {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    /* ===== SLIDER ===== */
+
+    #sliderText {
+        h2 {
+            font-size: 30px;
+        }
+        p {
+            font-size: 15px;
+        }
+    }
+
+    /* ===== ABOUT ME ===== */
+
+    #name {
+        font-size: 18px;
+    }
+
+    #specialization {
+        font-size: 14px;
+    }
+
+    #description {
+        width:90%;
+    }
+
+    /* ===== CONTACT =====*/
+
+    .column {
+        p {
+            font-size: 16px;
+        }
+        span {
+            font-size: 14px;
+        }
+    }
+    
+    #contactForm {
+        table {
+            tbody {
+                font-size: 15px;
+            }
+        }
+    }
+}
